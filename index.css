@@ -1,0 +1,26 @@
+body{
+	background-color:#e0f7fa;
+}
+p{
+  color:black;
+}
+footer{
+
+	border-radius: 5px;
+	box-shadow: 5px -10px 10px black, -5px -10px 10px black;
+	background-color: #e0f7fa;
+	height: 100px;
+	width:1350px;
+	text-align: center;
+	color: white;
+	position:relative;
+	top:420px;
+}
+h2{
+	color:black;
+}
+#posts{
+	position:relative;
+	top:120px;
+	text-align:center;
+}

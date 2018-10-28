@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="https://unpkg.com/vue"></script>
+  <title>TWITTER 2.0</title>
+</head>
+<body>
+  <div id="posts">
+    <label for="nome"> Digite Nome: </label>
+    <input type="text" v-model="nome">
+    <button type="button" v-on:click="addNome()">Aperte</button>
+
+  <p v-for="nome in nomes">{{ nome }}</p>
+  
+  <div>
+    <button v-on:click="myFunction()">curtir</button>
+    <p id="curtir"> curtidas : {{ curtir }}</p>
+  </div>
+  <div>
+    <button v-on:click="descurtir()">descurtir</button>
+    <p id="descurtir"> descurtidas : {{ menos }}</p>
+  </div>
+</div>
+<footer>
+    
+      <h2>
+        Desenvolvido por Gustavo Venassi
+        <br>TWITTER 2.0
+      </h2>
+
+    </footer>
+
+<script>
+  var cutir = new Vue({
+  el: '#posts',
+  data: {
+    curtir: 0,
+    nome: "",
+    nomes: [],
+    menos: 0,
+  },
+  methods: {
+    myFunction:  function(){
+      this.curtir++;
+      if(this.menos >=1 ){
+       this.menos--;
+      }if(this.curtir > 1){
+        alert("Nao e possivel curtir mais de uma vez")
+        this.curtir = this.curtir - 1
+      }
+    },
+    addNome: function(){
+      this.nomes.push(this.nome);
+      
+    },
+    descurtir : function(){
+      this.menos++;
+      if(this.curtir >=1 ){
+       this.curtir--;
+      
+      }if(this.menos > 1){
+        alert("Nao e possivel descurtir mais de uma vez")
+        this.menos = this.menos - 1
+      }
+    
+    }
+   
+    
+  }
+  
+  
+  
+})
+
+
+</script>
+
+</body>
+</html>
